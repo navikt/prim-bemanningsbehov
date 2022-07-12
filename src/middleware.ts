@@ -2,7 +2,10 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith("/api/")) {
+  if (
+    request.nextUrl.pathname.startsWith("/api/")
+    && !(request.headers?.get("user-agent") ?? "").startsWith("kube-probe")
+  ) {
     const timestamp = (new Date()).toDateString()
     console.log(`${timestamp}\t--- Received request ---`)
     console.log("pathname: ", request.nextUrl.pathname)

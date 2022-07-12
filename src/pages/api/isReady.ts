@@ -8,5 +8,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: "Application is ready." })
+  if ((req.headers?.["user-agent"] ?? "").startsWith("kube-probe")) {
+    res.status(200).json({ name: "Application is ready." })
+  }
+
+  return res.status(404)
 }
