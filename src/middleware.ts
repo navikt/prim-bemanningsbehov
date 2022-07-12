@@ -6,8 +6,8 @@ export function middleware(request: NextRequest) {
     const timestamp = (new Date()).toDateString()
     console.log(`${timestamp}\t--- Received request ---`)
     console.log("pathname: ", request.nextUrl.pathname)
-    for (const pair in request.headers.entries()) {
-      console.log(pair)
+    for (const pair of request.headers.entries()) {
+      console.log(pair[0], " ", pair[1])
     }
   }
 
