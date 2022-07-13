@@ -1,8 +1,8 @@
+import Error from "next/error"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 type Data = {
-  name?: string,
-  message?: string
+  name: string
 }
 
 export default function handler(
@@ -13,5 +13,5 @@ export default function handler(
     res.status(200).json({ name: "Application is ready." })
   }
 
-  return res.status(404).json({ message: "Not found" })
+  return <Error statusCode={404} />
 }
