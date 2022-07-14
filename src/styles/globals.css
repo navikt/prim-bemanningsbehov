@@ -11,7 +11,7 @@ body {
 }
 
 .skjema_konteiner {
-    margin: 0 auto;
+    margin: 1em auto;
     max-width: var(--skjema-bredde);
     background-color: var(--navds-semantic-color-canvas-background);
 }

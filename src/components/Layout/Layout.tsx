@@ -6,8 +6,13 @@ import styles from "./Layout.module.css"
 const Layout = ({ children }: { children: ReactElement}) => (
   <>
     <Header>
-      <Header.Title as="h1">Bemanningsbehov</Header.Title>
-      <span className={styles.space_filler} />
+      <Header.Title
+        href="/"
+        aria-label="Hjemnavigasjon"
+      >
+        Hjem
+      </Header.Title>
+      <span className={styles["space-filler"]} />
       <Dropdown>
         <Header.Button as={Dropdown.Toggle} className="ml-auto">
           <System
@@ -42,6 +47,11 @@ const Layout = ({ children }: { children: ReactElement}) => (
         </Dropdown.Menu>
       </Dropdown>
     </Header>
+    <div className={styles["bemanningsbehov-banner"]}>
+      <div className={styles["banner-innhold"]}>
+        Bemanningsbehov
+      </div>
+    </div>
     <main>{children}</main>
   </>
 )
