@@ -12,7 +12,7 @@ export default function Document() {
         />
         <link
           rel="icon"
-          href="/Users/B160814/Workspace/prim-bemanningsbehov/public/favicon.ico"
+          href="/Users/B160814/Workspace/prim-bemanningsbehov/public/images/favicon.ico"
         />
       </Head>
       <body>

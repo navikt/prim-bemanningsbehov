@@ -10,7 +10,7 @@ body {
     background-color: var(--navds-semantic-color-border-inverted);
 }
 
-.skjema_konteiner {
+.skjema-konteiner {
     margin: 1em auto;
     max-width: var(--skjema-bredde);
     background-color: var(--navds-semantic-color-canvas-background);
