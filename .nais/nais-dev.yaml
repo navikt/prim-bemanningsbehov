@@ -14,6 +14,8 @@ spec:
       value: https://bemanningsbehov.dev-fss-pub.nais.io
     - name: FSS_CONTEXT
       value: dev-fss
+    - name: HOME_URL
+      value: https://prim-bemanningsbehov.dev.intern.nav.no
   image: {{ image }}
   port: 3000
   ingresses:

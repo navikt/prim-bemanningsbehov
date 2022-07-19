@@ -1,18 +1,27 @@
 import Head from "next/head";
-import { Layout } from "../components/Layout";
 import type { AppProps } from "next/app"
+import { NextPage } from "next";
+import { ReactElement, ReactNode } from "react";
 import "../styles/globals.css"
 
-function MyApp({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <>
       <Head>
         <title>Bemanningsbehov</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout(<Component {...pageProps} />)}
     </>
   )
 }

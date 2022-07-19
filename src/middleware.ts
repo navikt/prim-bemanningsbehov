@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
+import appProperties from "../src/lib/appProperties"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  const env = process.env.NODE_ENV
   const {
     headers,
     nextUrl: { basePath, pathname },
@@ -10,23 +10,21 @@ export function middleware(request: NextRequest) {
   } = request
   const token = headers.get("authorization")
 
-  console.log("\t--- Hello from middleware ---")
-  console.log("url\t", url)
-  console.log("basePath\t", basePath)
-  console.log("pathname\t", pathname)
-  console.log("auth header\t", token)
-
   // TODO valider token
   const tokenErGyldig = token
 
   if (!tokenErGyldig) {
-    console.log("\t--- TOKEN INVALID, SHOULD REDIRECT ---")
-    // return NextResponse.redirect(new URL(basePath))
+    console.log("\t--- TOKEN INVALID, REDIRECT TO LOGIN ---")
+    console.log("url\t", url)
+    console.log("basePath\t", basePath)
+    console.log("pathname\t", pathname)
+    console.log("auth header\t", token)
+    return NextResponse.redirect(new URL(appProperties.hjemUrl + "/oauth2/login"))
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/dashboard", "/foo", "/bar"],
+  matcher: ["/dashboard"],
 }
