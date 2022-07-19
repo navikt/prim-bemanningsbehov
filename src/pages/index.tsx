@@ -1,4 +1,4 @@
-import Velkommen from "../components/Velkommen/Velkommen"
+import { Velkommen } from "../components/Velkommen"
 import { GetServerSideProps } from "next"
 
 const Hjem = () => {
