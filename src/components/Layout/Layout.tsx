@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: ReactElement}) => (
       <Dropdown>
         <Header.UserButton
           as={Dropdown.Toggle}
-          name="Ola Normann"
+          name="Ola Kjempelangtnavn Normann"
           description="Enhet: Skien"
           className="ml-auto"
         />

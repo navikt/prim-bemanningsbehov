@@ -6,8 +6,6 @@ import type { NextPage } from "next"
 import styles from "./index.module.css"
 
 const Hjem: NextPage = () => {
-  const innlogget = true
-
   return (
     <>
       <div className={`skjema-konteiner ${styles["login-konteiner"]}`}>
