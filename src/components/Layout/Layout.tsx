@@ -1,15 +1,12 @@
-import React, { ReactElement } from "react";
-import { Dropdown, Header } from "@navikt/ds-react-internal";
-import { System } from "@navikt/ds-icons";
+import React, { ReactElement } from "react"
+import { Dropdown, Header } from "@navikt/ds-react-internal"
+import { System } from "@navikt/ds-icons"
 import styles from "./Layout.module.css"
 
-const Layout = ({ children }: { children: ReactElement}) => (
+const Layout = ({ children }: { children: ReactElement }) => (
   <>
     <Header>
-      <Header.Title
-        href="/"
-        aria-label="Hjemnavigasjon"
-      >
+      <Header.Title href="/" aria-label="Hjemnavigasjon">
         Hjem
       </Header.Title>
       <span className={styles["space-filler"]} />
@@ -40,17 +37,13 @@ const Layout = ({ children }: { children: ReactElement}) => (
         />
         <Dropdown.Menu>
           <Dropdown.Menu.List>
-            <Dropdown.Menu.List.Item>
-              Logg ut
-            </Dropdown.Menu.List.Item>
+            <Dropdown.Menu.List.Item>Logg ut</Dropdown.Menu.List.Item>
           </Dropdown.Menu.List>
         </Dropdown.Menu>
       </Dropdown>
     </Header>
     <div className={styles["bemanningsbehov-banner"]}>
-      <div className={styles["banner-innhold"]}>
-        Bemanningsbehov
-      </div>
+      <div className={styles["banner-innhold"]}>Bemanningsbehov</div>
     </div>
     <main>{children}</main>
   </>

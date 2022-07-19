@@ -2,16 +2,16 @@
 @import "~@navikt/ds-css-internal";
 
 :root {
-    --skjema-bredde: 1024px;
+  --skjema-bredde: 1024px;
 }
 
 body {
-    font-family: "Source Sans Pro", sans-serif;
-    background-color: var(--navds-semantic-color-border-inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--navds-semantic-color-border-inverted);
 }
 
 .skjema-konteiner {
-    margin: 1em auto;
-    max-width: var(--skjema-bredde);
-    background-color: var(--navds-semantic-color-canvas-background);
+  margin: 1em auto;
+  max-width: var(--skjema-bredde);
+  background-color: var(--navds-semantic-color-canvas-background);
 }

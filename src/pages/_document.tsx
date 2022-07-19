@@ -1,10 +1,13 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document"
 
 export default function Document() {
   return (
     <Html lang="nb">
       <Head>
-        <meta name="description" content="Bemanningsbehov, en del av Plattform for Rekruttering og Intern Mobilitet" />
+        <meta
+          name="description"
+          content="Bemanningsbehov, en del av Plattform for Rekruttering og Intern Mobilitet"
+        />
         <meta charSet="UTF-8" />
         <link
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=optional"
@@ -16,8 +19,8 @@ export default function Document() {
         />
       </Head>
       <body>
-      <Main />
-      <NextScript />
+        <Main />
+        <NextScript />
       </body>
     </Html>
   )

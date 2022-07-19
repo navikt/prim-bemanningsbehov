@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from "next/head"
 import type { AppProps } from "next/app"
-import { NextPage } from "next";
-import { ReactElement, ReactNode } from "react";
+import { NextPage } from "next"
+import { ReactElement, ReactNode } from "react"
 import "../styles/globals.css"
 
 export type NextPageWithLayout = NextPage & {

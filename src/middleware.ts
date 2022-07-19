@@ -19,7 +19,13 @@ export function middleware(request: NextRequest) {
     console.log("basePath\t", basePath)
     console.log("pathname\t", pathname)
     console.log("auth header\t", token)
-    return NextResponse.redirect(new URL(appProperties.hjemUrl + "/oauth2/login"))
+    if (appProperties.erDev) {
+      console.log("dev mode free pass")
+      return NextResponse.next()
+    }
+    return NextResponse.redirect(
+      new URL(appProperties.hjemUrl + "/oauth2/login")
+    )
   }
 
   return NextResponse.next()

@@ -1,19 +1,19 @@
 .space-filler {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .bemanningsbehov-banner {
-    width: 100%;
-    background-color: var(--navds-global-color-purple-100);
-    min-height: var(--navds-spacing-14);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  width: 100%;
+  background-color: var(--navds-global-color-purple-100);
+  min-height: var(--navds-spacing-14);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .banner-innhold {
-    width: var(--skjema-bredde);
-    font-size: 1.875em;
-    font-weight: bold;
-    color: black;
+  width: var(--skjema-bredde);
+  font-size: 1.875em;
+  font-weight: bold;
+  color: black;
 }

@@ -1,4 +1,8 @@
-export default function Dashboard() {
+import { Layout } from "../components/Layout"
+import type { ReactElement } from "react"
+import type { NextPageWithLayout } from "./_app"
+
+const Dashboard: NextPageWithLayout = () => {
   return (
     <div className="skjema-konteiner">
       <h1>Her er dashboard</h1>
@@ -8,4 +12,9 @@ export default function Dashboard() {
   )
 }
 
-// !erLeder -> redirect til /pages/ikkeLeder
+Dashboard.getLayout = (page: ReactElement) => {
+  return <Layout>{page}</Layout>
+}
+// TODO !erLeder -> redirect til /pages/ikkeLeder
+
+export default Dashboard
