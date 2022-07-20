@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const {
     headers,
     nextUrl: { basePath, pathname },
-    url,
+    url
   } = request
   const token = headers.get("authorization")
 
@@ -32,5 +32,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard"],
+  matcher: ["/dashboard"]
 }

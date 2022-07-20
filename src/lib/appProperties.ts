@@ -6,7 +6,7 @@ const appProperties = {
   nodeEnv: NODE_ENV || "development",
   fssContext: FSS_CONTEXT,
   bemanningsbehovUrl: BEMANNINGSBEHOV_REST_URL,
-  erDev: NODE_ENV === "development",
+  erDev: NODE_ENV === "development"
 }
 
 export default appProperties

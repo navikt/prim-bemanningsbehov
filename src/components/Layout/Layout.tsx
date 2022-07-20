@@ -1,11 +1,13 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement, useContext } from "react"
 import { Dropdown, Header } from "@navikt/ds-react-internal"
 import { System } from "@navikt/ds-icons"
 import styles from "./Layout.module.css"
 import { useRouter } from "next/router"
+import { BrukerContext } from "../../contexts"
 
 const Layout = ({ children }: { children: ReactElement }) => {
   const router = useRouter()
+  const { bruker } = useContext(BrukerContext)
 
   return (
     <>
@@ -35,13 +37,15 @@ const Layout = ({ children }: { children: ReactElement }) => {
         <Dropdown>
           <Header.UserButton
             as={Dropdown.Toggle}
-            name="Ola Kjempelangtnavn Normann"
+            name={bruker?.navn ?? "NN"}
             description="Enhet: Skien"
             className="ml-auto"
           />
           <Dropdown.Menu>
             <Dropdown.Menu.List>
-              <Dropdown.Menu.List.Item onClick={() => router.push("/oauth2/logout")}>
+              <Dropdown.Menu.List.Item
+                onClick={() => router.push("/oauth2/logout")}
+              >
                 Logg ut
               </Dropdown.Menu.List.Item>
             </Dropdown.Menu.List>
