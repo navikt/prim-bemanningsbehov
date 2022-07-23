@@ -1,10 +1,14 @@
-import { Layout } from "../components/Layout"
-import type { GetServerSideProps, InferGetServerSidePropsType } from "next"
-import { type Bruker, BrukerContext } from "../contexts"
 import { useContext } from "react"
+import { Layout } from "../components/Layout"
+import { type Bruker, BrukerContext } from "../contexts"
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next"
+import { verifiserToken } from "../lib/auth"
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  // TODO Parse bruker fra ctx.req
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const token = req.headers["authorization"]
+
+  const { payload } = await verifiserToken(token as string)
+  console.log(payload)
   // TODO !erLeder -> redirect til /pages/ikkeLeder
   const parsetBrukerFraToken: Bruker = {
     navn: "Bruk Brukersen",
