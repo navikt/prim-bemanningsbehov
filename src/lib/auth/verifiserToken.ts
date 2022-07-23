@@ -1,7 +1,11 @@
 import * as jose from "jose"
 import * as oidc from "openid-client"
 import * as qs from "qs"
-import type { FlattenedJWSInput, JWSHeaderParameters, JWTVerifyResult } from "jose"
+import type {
+  FlattenedJWSInput,
+  JWSHeaderParameters,
+  JWTVerifyResult
+} from "jose"
 import type { GetKeyFunction } from "jose/dist/types/types"
 import { createRemoteJWKSet, jwtVerify } from "jose"
 
@@ -19,7 +23,9 @@ const hentJWKS = () => {
   return remoteJWKSet
 }
 
-export const verifiserToken = (token: string | Uint8Array): Promise<JWTVerifyResult> => {
+export const verifiserToken = (
+  token: string | Uint8Array
+): Promise<JWTVerifyResult> => {
   return jwtVerify(token, hentJWKS(), {
     issuer: process.env.AZURE_OPENID_CONFIG_ISSUER,
     audience: process.env.AZURE_APP_CLIENT_ID
