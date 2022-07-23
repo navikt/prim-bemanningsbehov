@@ -7,7 +7,8 @@ import { verifiserToken } from "../lib/auth"
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const token = req.headers["authorization"]!.split(" ")[1]
 
-  const { payload } = await verifiserToken(token)
+  const { protectedHeader, payload } = await verifiserToken(token)
+  console.log(protectedHeader)
   console.log(payload)
   // TODO !erLeder -> redirect til /pages/ikkeLeder
   const parsetBrukerFraToken: Bruker = {
